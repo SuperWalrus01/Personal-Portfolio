@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --window-bg: #1a1f2e;
+  --status-bar-bg: rgba(26, 31, 46, 0.9);
+  --dock-bg: rgba(26, 31, 46, 0.7);
+  --accent-color: #3b82f6;
+  --text-color: #e5e7eb;
+  --code-bg: #0f1419;
+  --border-color: #374151;
+  --card-bg: #1f2937;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background: #0f2027;
+  /* iOS safe area insets for notch/home indicator */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  background: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  /* Prevent iOS bounce scroll */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Windows Container */
+.windows-container {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  z-index: 10;
+}
+
+/* Ensure all children are above the background */
+.App > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+    height: 100dvh; /* Use dynamic viewport height on mobile */
+  }
+  
+  .App {
+    min-height: 100dvh;
+    height: auto;
+  }
+  
+  .windows-container {
+    top: 24px;
+    bottom: 70px;
+    padding: 0 8px; /* Add horizontal padding on mobile */
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets on mobile */
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent text selection on tap */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  
+  /* Allow text selection in specific areas */
+  p, span, code, pre {
+    -webkit-touch-callout: text;
+    user-select: text;
+  }
+}
+
+/* PWA standalone mode adjustments */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .App {
+    /* Additional top padding when in standalone (no Safari UI) */
+    padding-top: max(20px, env(safe-area-inset-top));
+  }
+}

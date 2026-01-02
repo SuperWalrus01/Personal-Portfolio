@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- SEO: Page title and description -->
+    <title>Keenan Jusak’s Portfolio | Damianus Keenan Jusak – Mathematics &amp; Statistics</title>
+    <meta name="description" content="Damianus Keenan Jusak — mathematics, statistics & machine-learning student. Portfolio showcasing projects in data science, modelling, and web development." />
+    <meta name="keywords" content="Damianus Keenan Jusak, Keenan Jusak, portfolio, mathematics, statistics, machine learning, data science, Python, React" />
+
+    <!-- Mobile-optimized viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+    
+    <!-- iOS PWA Support - CRITICAL for Add to Home Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Keenan Jusak" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#120033" />
+    <meta name="msapplication-TileColor" content="#120033" />
+    <meta name="msapplication-navbutton-color" content="#120033" />
+
+    <!-- Favicon / App icons - Using apple-touch-icon.png as primary logo -->
+    <link rel="icon" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <!-- PNG icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    
+    <!-- iOS-specific touch icons (multiple sizes for better quality) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="%PUBLIC_URL%/favicons/apple-touch-icon.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- SEO meta tags -->
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://keenanjusak.com/" />
+
+    <!-- Open Graph / Social preview -->
+    <meta property="og:title" content="Keenan Jusak’s Portfolio | Damianus Keenan Jusak" />
+    <meta property="og:description" content="Damianus Keenan Jusak — mathematics, statistics & machine-learning student. Portfolio showcasing projects in data science, modelling, and web development." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://keenanjusak.com/" />
+    <meta property="og:image" content="%PUBLIC_URL%/favicons/warwick.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Keenan Jusak’s Portfolio | Damianus Keenan Jusak" />
+    <meta name="twitter:description" content="Damianus Keenan Jusak — mathematics, statistics & machine-learning student. Portfolio of data science and web development projects." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/favicons/warwick.png" />
+
+    <!-- Structured data: Person + Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Damianus Keenan Jusak",
+      "alternateName": "Keenan Jusak",
+      "url": "https://keenanjusak.com/",
+      "sameAs": [
+        "https://github.com/keenanjusak",
+        "https://www.linkedin.com/in/damianus-keenan-jusak-74552623b/",
+        "https://www.kaggle.com/keenanjusak"
+      ],
+      "jobTitle": "Mathematics & Statistics student"
+    }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <!-- Service Worker Registration for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('%PUBLIC_URL%/service-worker.js')
+            .then(registration => {
+              console.log('SW registered:', registration);
+            })
+            .catch(error => {
+              console.log('SW registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
